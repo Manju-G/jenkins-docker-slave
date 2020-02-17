@@ -60,7 +60,7 @@ RUN CD_VERSION=$(if [ ${CHROME_DRIVER_VERSION:-latest} = "latest" ]; then echo $
 
 #WORKDIR /home/jenkins
 COPY .ssh/authorized_keys /home/jenkins/.ssh/authorized_keys
-COPY requirement.txt /home/jenkins/requirements.txt
+COPY requirements.txt /home/jenkins/requirements.txt
 RUN  pip install -r /home/jenkins/requirements.txt
 RUN chown -R jenkins:jenkins /home/jenkins/* && \
     chown -R jenkins:jenkins /home/jenkins/.ssh/ && \
